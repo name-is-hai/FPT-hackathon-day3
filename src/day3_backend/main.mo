@@ -145,7 +145,7 @@ actor {
   };
   
   // Challenge 17
-  let other_canister : actor {deposit_cycles : () -> async Nat} = actor("CANISTER_ID"); //from deposit_cycles canister
+  let other_canister : actor {deposit_cycles : () -> async Nat} = actor("CANISTER_ID");
   private func withdraw_cycles(n: Nat) : async Nat {
     Cycle.add(n);
     await other_canister.deposit_cycles(); 
