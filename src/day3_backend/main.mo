@@ -145,8 +145,10 @@ actor {
   };
   
   // Challenge 17
-  public func withdraw_cycles (n: Nat ) {
-
+  let other_canister : actor {deposit_cycles : () -> async Nat} = actor("CANISTER_ID"); //from deposit_cycles canister
+  private func withdraw_cycles(n: Nat) : async Nat {
+    Cycle.add(n);
+    await other_canister.deposit_cycles(); 
   };
 
   // Challenge 18
