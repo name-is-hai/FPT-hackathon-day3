@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "day3_backend": {
+      "main": "src/day3_backend/main.mo",
+      "type": "motoko"
+    },
+    "day3_frontend": {
+      "dependencies": [
+        "day3_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/day3_frontend/src/index.html"
+      },
+      "source": [
+        "src/day3_frontend/assets",
+        "dist/day3_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
